@@ -1,0 +1,443 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#616161"
+    android:padding="6dp"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:scrollbars="vertical">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="4sp"
+            android:background="@drawable/layout_bg"
+            android:orientation="vertical"
+            android:padding="4dp"
+            android:scrollbars="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/layout_bg_question"
+                android:fontFamily="@font/pixel"
+                android:gravity="center"
+                android:padding="6dp"
+                android:text="Who is the mysterious creator of Bitcoin?"
+                android:textAllCaps="false"
+                android:textColor="#FFFFFF"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <RadioGroup
+                    android:id="@+id/question_1_rg"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.8"
+                    android:orientation="vertical">
+
+                    <RadioButton
+                        android:id="@+id/question_1_rb_1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:buttonTint="#FFFFFF"
+                        android:fontFamily="@font/pixel"
+                        android:paddingLeft="6sp"
+                        android:tag="0"
+                        android:text="Donald Trump"
+                        android:textColor="#FFEB3B"
+                        android:textSize="16sp" />
+
+                    <RadioButton
+                        android:id="@+id/question_1_rb_2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:buttonTint="#FFFFFF"
+                        android:fontFamily="@font/pixel"
+                        android:paddingLeft="6sp"
+                        android:tag="1"
+                        android:text="Satoshi Nakamoto"
+                        android:textColor="#FF9800"
+                        android:textSize="16sp" />
+
+                    <RadioButton
+                        android:id="@+id/question_1_rb_3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:buttonTint="#FFFFFF"
+                        android:fontFamily="@font/pixel"
+                        android:paddingLeft="6sp"
+                        android:tag="0"
+                        android:text="Mickey Mouse"
+                        android:textColor="#03A9F4"
+                        android:textSize="16sp" />
+
+                    <RadioButton
+                        android:id="@+id/question_1_rb_4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:buttonTint="#FFFFFF"
+                        android:fontFamily="@font/pixel"
+                        android:paddingLeft="6sp"
+                        android:tag="0"
+                        android:text="Kim Dotcom"
+                        android:textColor="#FFFFFF"
+                        android:textSize="16sp" />
+                </RadioGroup>
+
+                <ImageView
+                    android:id="@+id/team_a_img"
+                    android:layout_width="60dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_weight="0.2"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/mystery" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="4sp"
+            android:background="@drawable/layout_bg"
+            android:orientation="vertical"
+            android:padding="4dp"
+            android:scrollbars="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/layout_bg_question"
+                android:fontFamily="@font/pixel"
+                android:padding="6dp"
+                android:text="Select correct Bitcoin characteristics:"
+                android:textAlignment="center"
+                android:textAllCaps="false"
+                android:textColor="#FFFFFF"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.8"
+                    android:orientation="vertical">
+
+                    <CheckBox
+                        android:id="@+id/question_2_chk_1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:buttonTint="#FFFFFF"
+                        android:fontFamily="@font/pixel"
+                        android:paddingLeft="6sp"
+                        android:tag="0"
+                        android:text="BTC’s supply is infinite"
+                        android:textColor="#FFEB3B"
+                        android:textSize="16sp" />
+
+                    <CheckBox
+                        android:id="@+id/question_2_chk_2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:buttonTint="#FFFFFF"
+                        android:fontFamily="@font/pixel"
+                        android:paddingLeft="6dp"
+                        android:tag="1"
+                        android:text="BTC can be banned."
+                        android:textColor="#FF9800"
+                        android:textSize="16sp" />
+
+                    <CheckBox
+                        android:id="@+id/question_2_chk_3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:buttonTint="#FFFFFF"
+                        android:fontFamily="@font/pixel"
+                        android:paddingLeft="6dp"
+                        android:tag="1"
+                        android:text="BTC is untraceable."
+                        android:textColor="#03A9F4"
+                        android:textSize="16sp" />
+
+                    <CheckBox
+                        android:id="@+id/question_2_chk_4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:buttonTint="#FFFFFF"
+                        android:fontFamily="@font/pixel"
+                        android:paddingLeft="6dp"
+                        android:tag="0"
+                        android:text="BTC is decentralized."
+                        android:textColor="#FFFFFF"
+                        android:textSize="16sp" />
+
+                </LinearLayout>
+
+                <ImageView
+                    android:id="@+id/charact_image"
+                    android:layout_width="100dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.2"
+                    android:gravity="center"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/btcpixelated" />
+
+            </LinearLayout>
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="4sp"
+            android:layout_weight="1"
+            android:background="@drawable/layout_bg"
+            android:orientation="vertical"
+            android:padding="4dp"
+            android:scrollbars="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/layout_bg_question"
+                android:fontFamily="@font/pixel"
+                android:padding="6dp"
+                android:text="A bitcoin can be divided down into how many decimal places?"
+                android:textAlignment="center"
+                android:textAllCaps="false"
+                android:textColor="#FFFFFF"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="120dp"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/question_3_input"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.8"
+                    android:layout_gravity="center"
+                    android:hint="Number"
+                    android:textColorHint="#FFEB3B"
+                    android:backgroundTint="#FFFFFF"
+                    android:digits="0123456789"
+                    android:fontFamily="@font/startrek"
+                    android:inputType="number"
+                    android:textAlignment="center"
+                    android:textColor="#FFFFFF"
+                    android:textSize="32sp" />
+
+                <ImageView
+                    android:id="@+id/pizza_image"
+                    android:layout_width="60dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_weight="0.2"
+                    android:padding="15dp"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/pizza" />
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="4sp"
+            android:background="@drawable/layout_bg"
+            android:orientation="vertical"
+            android:padding="4dp"
+            android:scrollbars="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/layout_bg_question"
+                android:fontFamily="@font/pixel"
+                android:gravity="center"
+                android:padding="6dp"
+                android:text="What is the best Bitcoin mining hardware?"
+                android:textAllCaps="false"
+                android:textColor="#FFFFFF"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <RadioGroup
+                    android:id="@+id/question_4_rg"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.8"
+                    android:orientation="vertical">
+
+                    <RadioButton
+                        android:id="@+id/question_4_rb_1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:buttonTint="#FFFFFF"
+                        android:fontFamily="@font/pixel"
+                        android:paddingLeft="6sp"
+                        android:tag="0"
+                        android:text="CPU"
+                        android:textColor="#FFEB3B"
+                        android:textSize="16sp" />
+
+                    <RadioButton
+                        android:id="@+id/question_4_rb_2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:buttonTint="#FFFFFF"
+                        android:fontFamily="@font/pixel"
+                        android:paddingLeft="6sp"
+                        android:tag="0"
+                        android:text="GPU"
+                        android:textColor="#FF9800"
+                        android:textSize="16sp" />
+
+                    <RadioButton
+                        android:id="@+id/question_4_rb_3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:buttonTint="#FFFFFF"
+                        android:fontFamily="@font/pixel"
+                        android:paddingLeft="6sp"
+                        android:tag="0"
+                        android:text="FPGA"
+                        android:textColor="#03A9F4"
+                        android:textSize="16sp" />
+
+                    <RadioButton
+                        android:id="@+id/question_4_rb_4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:buttonTint="#FFFFFF"
+                        android:fontFamily="@font/pixel"
+                        android:paddingLeft="6sp"
+                        android:tag="0"
+                        android:text="ASIC"
+                        android:textColor="#FFFFFF"
+                        android:textSize="16sp" />
+                </RadioGroup>
+
+                <ImageView
+                    android:id="@+id/mining_imgage"
+                    android:layout_width="60dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_weight="0.2"
+                    android:padding="15dp"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/hammer" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="4sp"
+            android:background="@drawable/layout_bg"
+            android:orientation="vertical"
+            android:padding="4dp"
+            android:scrollbars="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/layout_bg_question"
+                android:fontFamily="@font/pixel"
+                android:padding="6dp"
+                android:text="What's my score?!"
+                android:textAlignment="center"
+                android:textAllCaps="false"
+                android:textColor="#FFFFFF"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.8"
+                    android:orientation="vertical">
+
+                    <EditText
+                        android:id="@+id/name_input_view"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:hint="Name"
+                        android:textColorHint="#FFEB3B"
+                        android:backgroundTint="#FFFFFF"
+                        android:fontFamily="@font/startrek"
+                        android:inputType="textPersonName"
+                        android:textAlignment="center"
+                        android:textColor="#FFFFFF"
+                        android:textSize="32sp" />
+
+                    <Button
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="8dp"
+                        android:background="@drawable/layout_bg"
+                        android:fontFamily="@font/pixel"
+                        android:tag="A"
+                        android:text="Submit"
+                        android:textSize="20sp"
+                        android:onClick="submitScore"
+                        android:textColor="#FFFFFF" />
+
+                </LinearLayout>
+
+                <ImageView
+                    android:id="@+id/leprechaun_image"
+                    android:layout_width="260dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/leprechaun" />
+
+            </LinearLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+
+</ScrollView>
