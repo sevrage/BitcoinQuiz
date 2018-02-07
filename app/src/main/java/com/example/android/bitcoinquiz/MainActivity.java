@@ -2,15 +2,22 @@ package com.example.android.bitcoinquiz;
 
 import android.content.Intent;
 import android.net.Uri;
+import android.os.CountDownTimer;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Gravity;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.RelativeLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
@@ -48,6 +55,8 @@ public class MainActivity extends AppCompatActivity {
     //RadioButton question_4_rb_3;
     RadioButton question_4_rb_4;
 
+    //for longer toast duration
+    private Toast toastedScore;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -76,7 +85,103 @@ public class MainActivity extends AppCompatActivity {
         //question_4_rb_2 = findViewById(R.id.question_4_rb_2);
         //question_4_rb_3 = findViewById(R.id.question_4_rb_3);
         question_4_rb_4 = findViewById(R.id.question_4_rb_4);
+
+
+        //setup listeners
+
+        question_2_chk_1.setOnCheckedChangeListener(new CheckBox.OnCheckedChangeListener() {
+
+            public void onCheckedChanged(CompoundButton buttonView,
+                                         boolean isChecked) {
+                if (isChecked) {
+                    Toast.makeText(MainActivity.this, getText(R.string.question2Chk1) + " " + getText(R.string.checked), Toast.LENGTH_SHORT).show();
+                } else {
+                    Toast.makeText(MainActivity.this, getText(R.string.question2Chk1) + " " + getText(R.string.unchecked), Toast.LENGTH_SHORT).show();
+                }
+
+            }
+        });
+
+        question_2_chk_2.setOnCheckedChangeListener(new CheckBox.OnCheckedChangeListener() {
+
+            public void onCheckedChanged(CompoundButton buttonView,
+                                         boolean isChecked) {
+                if (isChecked) {
+                    Toast.makeText(MainActivity.this, getText(R.string.question2Chk2) + " " + getText(R.string.checked), Toast.LENGTH_SHORT).show();
+                } else {
+                    Toast.makeText(MainActivity.this, getText(R.string.question2Chk2) + " " + getText(R.string.unchecked), Toast.LENGTH_SHORT).show();
+                }
+
+            }
+        });
+
+        question_2_chk_3.setOnCheckedChangeListener(new CheckBox.OnCheckedChangeListener() {
+
+            public void onCheckedChanged(CompoundButton buttonView,
+                                         boolean isChecked) {
+                if (isChecked) {
+                    Toast.makeText(MainActivity.this, getText(R.string.question2Chk3) + " " + getText(R.string.checked), Toast.LENGTH_SHORT).show();
+                } else {
+                    Toast.makeText(MainActivity.this, getText(R.string.question2Chk3) + " " + getText(R.string.unchecked), Toast.LENGTH_SHORT).show();
+                }
+
+            }
+        });
+
+        question_2_chk_4.setOnCheckedChangeListener(new CheckBox.OnCheckedChangeListener() {
+
+            public void onCheckedChanged(CompoundButton buttonView,
+                                         boolean isChecked) {
+                if (isChecked) {
+                    Toast.makeText(MainActivity.this, getText(R.string.question2Chk4) + " " + getText(R.string.checked), Toast.LENGTH_SHORT).show();
+                } else {
+                    Toast.makeText(MainActivity.this, getText(R.string.question2Chk4) + " " + getText(R.string.unchecked), Toast.LENGTH_SHORT).show();
+                }
+
+            }
+        });
+
+        //Question 1 RadioGroup
+        question_1_rg.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                switch (checkedId) {
+                    case R.id.question_1_rb_1:
+                        Toast.makeText(MainActivity.this, getText(R.string.donald_trump) + " " + getText(R.string.selected), Toast.LENGTH_SHORT).show();
+                        break;
+                    case R.id.question_1_rb_2:
+                        Toast.makeText(MainActivity.this, getText(R.string.satoshi_nakamoto) + " " + getText(R.string.selected), Toast.LENGTH_SHORT).show();
+                        break;
+                    case R.id.question_1_rb_3:
+                        Toast.makeText(MainActivity.this, getText(R.string.mickey_mouse) + " " + getText(R.string.selected), Toast.LENGTH_SHORT).show();
+                        break;
+                    case R.id.question_1_rb_4:
+                        Toast.makeText(MainActivity.this, getText(R.string.kim_dotcom) + " " + getText(R.string.selected), Toast.LENGTH_SHORT).show();
+                        break;
+                }
+            }
+        });
+
+        //Question 4 RadioGroup
+        question_4_rg.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                switch (checkedId) {
+                    case R.id.question_4_rb_1:
+                        Toast.makeText(MainActivity.this, getText(R.string.cpu) + " " + getText(R.string.selected), Toast.LENGTH_SHORT).show();
+                        break;
+                    case R.id.question_4_rb_2:
+                        Toast.makeText(MainActivity.this, getText(R.string.gpu) + " " + getText(R.string.selected), Toast.LENGTH_SHORT).show();
+                        break;
+                    case R.id.question_4_rb_3:
+                        Toast.makeText(MainActivity.this, getText(R.string.fpga) + " " + getText(R.string.selected), Toast.LENGTH_SHORT).show();
+                        break;
+                    case R.id.question_4_rb_4:
+                        Toast.makeText(MainActivity.this, getText(R.string.asic) + " " + getText(R.string.selected), Toast.LENGTH_SHORT).show();
+                        break;
+                }
+            }
+        });
     }
+
 
     @Override
     public void onSaveInstanceState(Bundle savedInstanceState) {
@@ -153,13 +258,58 @@ public class MainActivity extends AppCompatActivity {
         //load vars
         setupAnswerVars();
 
+        //calculate answers score
         double score = calculateScore();
         //Log.v("MainActivity","The score is " + score);
+
+        //Show toast with score
+        showToast(score);
 
         String message = createScoreSummary(score, username);
         sendEmailOrder(username, message);
 
-        resetQuiz();
+        //resetQuiz();
+    }
+
+    /**
+     * Show Score Toast Mode
+     */
+    public void showToast(double score) {
+        // Set the toast and duration
+        int toastDurationInMilliSeconds = 10000;
+
+        // Inflate the Layout
+        LayoutInflater inflater = getLayoutInflater();
+        View layout = inflater.inflate(R.layout.toasted,
+                (ViewGroup) findViewById(R.id.toasted_layout_id));
+
+        // set Score Value
+        TextView scoreTxt = layout.findViewById(R.id.toastscore_textview);
+        //String scorepercent = String.format(getResources().getString(R.string.scorepercentage), score);
+        //String scorepercent = String.format(getResources().getString(R.string.scorepercentage),score,"%");
+        scoreTxt.setText(String.valueOf(score) + "%");
+
+        // Create Custom Toast
+        toastedScore = new Toast(getApplicationContext());
+        toastedScore.setGravity(Gravity.CENTER_VERTICAL, 0, 0);
+        toastedScore.setDuration(Toast.LENGTH_LONG);
+        toastedScore.setView(layout);
+
+        // Set the countdown to display the toast
+        CountDownTimer toastCountDown;
+        toastCountDown = new CountDownTimer(toastDurationInMilliSeconds, 1000 /*Tick duration*/) {
+            public void onTick(long millisUntilFinished) {
+                toastedScore.show();
+            }
+
+            public void onFinish() {
+                toastedScore.cancel();
+            }
+        };
+
+        // Show the toast and starts the countdown
+        toastedScore.show();
+        toastCountDown.start();
     }
 
     /**
@@ -197,7 +347,7 @@ public class MainActivity extends AppCompatActivity {
 
         if (answer_1_selectedRbId == question_1_rb_2.getId()) {
             score += 1;
-            Log.v("MainActivity", "Question 1 is correct ");
+            //Log.v("MainActivity", "Question 1 is correct ");
         }
 
         double scoreQuestion2 = 0;
@@ -223,21 +373,21 @@ public class MainActivity extends AppCompatActivity {
         }
         if (scoreQuestion2 > 0) {
             scoreQuestion2 = scoreQuestion2 / 4;
-            Log.v("MainActivity", "Question 2 score is: " + scoreQuestion2);
+            //Log.v("MainActivity", "Question 2 score is: " + scoreQuestion2);
         }
 
         if (answer_3_input.equals("8")) {
             score += 1;
-            Log.v("MainActivity", "Question 3 is correct ");
+            //Log.v("MainActivity", "Question 3 is correct ");
         }
 
         if (answer_4_selectedRbId == question_4_rb_4.getId()) {
             score += 1;
-            Log.v("MainActivity", "Question 4 is correct ");
+            //Log.v("MainActivity", "Question 4 is correct ");
         }
 
-        score = (score + scoreQuestion2) * 100.0 / 4;
-        Log.v("MainActivity", "Total Score is: " + score);
+        score = (score + scoreQuestion2) * 100.0 / TOTAL_QUESTIONS;
+        //Log.v("MainActivity", "Total Score is: " + score);
         return score;
 
     }

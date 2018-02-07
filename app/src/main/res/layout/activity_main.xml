@@ -97,7 +97,8 @@
                 </RadioGroup>
 
                 <ImageView
-                    android:id="@+id/team_a_img"
+                    android:contentDescription="@null"
+                    android:id="@+id/creator_image"
                     android:layout_width="60dp"
                     android:layout_height="match_parent"
                     android:layout_gravity="center"
@@ -195,6 +196,7 @@
                 </LinearLayout>
 
                 <ImageView
+                    android:contentDescription="@null"
                     android:id="@+id/charact_image"
                     android:layout_width="100dp"
                     android:layout_height="match_parent"
@@ -211,7 +213,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="4dp"
-            android:layout_weight="1"
             android:background="@drawable/layout_bg"
             android:orientation="vertical"
             android:padding="4dp"
@@ -245,8 +246,8 @@
                     android:layout_weight="0.8"
                     android:backgroundTint="#FFFFFF"
                     android:digits="0123456789"
-                    android:fontFamily="@font/startrek"
-                    android:hint="Number"
+                    android:fontFamily="@font/pixel"
+                    android:hint="@string/number"
                     android:inputType="number"
                     android:textAlignment="center"
                     android:textColor="#FFFFFF"
@@ -254,6 +255,7 @@
                     android:textSize="32sp" />
 
                 <ImageView
+                    android:contentDescription="@null"
                     android:id="@+id/pizza_image"
                     android:layout_width="60dp"
                     android:layout_height="match_parent"
@@ -352,6 +354,7 @@
                 </RadioGroup>
 
                 <ImageView
+                    android:contentDescription="@null"
                     android:id="@+id/mining_imgage"
                     android:layout_width="60dp"
                     android:layout_height="match_parent"
@@ -404,7 +407,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:backgroundTint="#FFFFFF"
-                        android:fontFamily="@font/startrek"
+                        android:fontFamily="@font/pixel"
                         android:hint="@string/name"
                         android:inputType="textPersonName"
                         android:textAlignment="center"
@@ -427,6 +430,7 @@
                 </LinearLayout>
 
                 <ImageView
+                    android:contentDescription="@null"
                     android:id="@+id/leprechaun_image"
                     android:layout_width="260dp"
                     android:layout_height="match_parent"

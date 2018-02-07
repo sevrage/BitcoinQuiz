@@ -1,4 +1,5 @@
-<resources>
+<resources xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="app_name">Bitcoin Quiz</string>
     <string name="question1">Who is the mysterious creator of Bitcoin?</string>
     <string name="question2">Select correct Bitcoin characteristics:</string>
@@ -10,13 +11,19 @@
     <string name="question2Chk2">BTC can be banned.</string>
     <string name="question2Chk3">BTC is untraceable.</string>
     <string name="question2Chk4">BTC is decentralized.</string>
-    <string name="donald_trump">Donald Trump</string>
-    <string name="satoshi_nakamoto">Satoshi Nakamoto</string>
-    <string name="kim_dotcom">Kim Dotcom</string>
-    <string name="mickey_mouse">Mickey Mouse</string>
+    <string name="donald_trump" translatable="false">Donald Trump</string>
+    <string name="satoshi_nakamoto" translatable="false">Satoshi Nakamoto</string>
+    <string name="kim_dotcom" translatable="false">Kim Dotcom</string>
+    <string name="mickey_mouse" translatable="false">Mickey Mouse</string>
     <string name="name">Name</string>
-    <string name="asic">ASIC</string>
-    <string name="fpga">FPGA</string>
-    <string name="gpu">GPU</string>
-    <string name="cpu">CPU</string>
+    <string name="asic" translatable="false">ASIC</string>
+    <string name="fpga" translatable="false">FPGA</string>
+    <string name="gpu" translatable="false">GPU</string>
+    <string name="cpu" translatable="false">CPU</string>
+    <string name="number">Number</string>
+    <string name="selected">Selected!</string>
+    <string name="checked" translatable="false">Checked!</string>
+    <string name="unchecked" translatable="false">Unchecked!</string>
+    <string name="finalscore">You Scored:</string>
+    <string name="scorepercentage"><xliff:g id="score">%1$d</xliff:g><xliff:g id="percent_symbol">%1$s</xliff:g></string>
 </resources>
