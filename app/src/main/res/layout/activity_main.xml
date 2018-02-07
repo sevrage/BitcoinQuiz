@@ -16,7 +16,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="4sp"
+            android:layout_margin="4dp"
             android:background="@drawable/layout_bg"
             android:orientation="vertical"
             android:padding="4dp"
@@ -29,7 +29,7 @@
                 android:fontFamily="@font/pixel"
                 android:gravity="center"
                 android:padding="6dp"
-                android:text="Who is the mysterious creator of Bitcoin?"
+                android:text="@string/question1"
                 android:textAllCaps="false"
                 android:textColor="#FFFFFF"
                 android:textSize="20sp"
@@ -53,9 +53,9 @@
                         android:layout_height="wrap_content"
                         android:buttonTint="#FFFFFF"
                         android:fontFamily="@font/pixel"
-                        android:paddingLeft="6sp"
+                        android:paddingLeft="6dp"
                         android:tag="0"
-                        android:text="Donald Trump"
+                        android:text="@string/donald_trump"
                         android:textColor="#FFEB3B"
                         android:textSize="16sp" />
 
@@ -65,9 +65,9 @@
                         android:layout_height="wrap_content"
                         android:buttonTint="#FFFFFF"
                         android:fontFamily="@font/pixel"
-                        android:paddingLeft="6sp"
+                        android:paddingLeft="6dp"
                         android:tag="1"
-                        android:text="Satoshi Nakamoto"
+                        android:text="@string/satoshi_nakamoto"
                         android:textColor="#FF9800"
                         android:textSize="16sp" />
 
@@ -77,9 +77,9 @@
                         android:layout_height="wrap_content"
                         android:buttonTint="#FFFFFF"
                         android:fontFamily="@font/pixel"
-                        android:paddingLeft="6sp"
+                        android:paddingLeft="6dp"
                         android:tag="0"
-                        android:text="Mickey Mouse"
+                        android:text="@string/mickey_mouse"
                         android:textColor="#03A9F4"
                         android:textSize="16sp" />
 
@@ -89,9 +89,9 @@
                         android:layout_height="wrap_content"
                         android:buttonTint="#FFFFFF"
                         android:fontFamily="@font/pixel"
-                        android:paddingLeft="6sp"
+                        android:paddingLeft="6dp"
                         android:tag="0"
-                        android:text="Kim Dotcom"
+                        android:text="@string/kim_dotcom"
                         android:textColor="#FFFFFF"
                         android:textSize="16sp" />
                 </RadioGroup>
@@ -113,7 +113,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="4sp"
+            android:layout_margin="4dp"
             android:background="@drawable/layout_bg"
             android:orientation="vertical"
             android:padding="4dp"
@@ -125,7 +125,7 @@
                 android:background="@drawable/layout_bg_question"
                 android:fontFamily="@font/pixel"
                 android:padding="6dp"
-                android:text="Select correct Bitcoin characteristics:"
+                android:text="@string/question2"
                 android:textAlignment="center"
                 android:textAllCaps="false"
                 android:textColor="#FFFFFF"
@@ -150,9 +150,9 @@
                         android:layout_height="wrap_content"
                         android:buttonTint="#FFFFFF"
                         android:fontFamily="@font/pixel"
-                        android:paddingLeft="6sp"
+                        android:paddingLeft="6dp"
                         android:tag="0"
-                        android:text="BTC’s supply is infinite"
+                        android:text="@string/question2Chk1"
                         android:textColor="#FFEB3B"
                         android:textSize="16sp" />
 
@@ -164,7 +164,7 @@
                         android:fontFamily="@font/pixel"
                         android:paddingLeft="6dp"
                         android:tag="1"
-                        android:text="BTC can be banned."
+                        android:text="@string/question2Chk2"
                         android:textColor="#FF9800"
                         android:textSize="16sp" />
 
@@ -176,7 +176,7 @@
                         android:fontFamily="@font/pixel"
                         android:paddingLeft="6dp"
                         android:tag="1"
-                        android:text="BTC is untraceable."
+                        android:text="@string/question2Chk3"
                         android:textColor="#03A9F4"
                         android:textSize="16sp" />
 
@@ -188,7 +188,7 @@
                         android:fontFamily="@font/pixel"
                         android:paddingLeft="6dp"
                         android:tag="0"
-                        android:text="BTC is decentralized."
+                        android:text="@string/question2Chk4"
                         android:textColor="#FFFFFF"
                         android:textSize="16sp" />
 
@@ -210,7 +210,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="4sp"
+            android:layout_margin="4dp"
             android:layout_weight="1"
             android:background="@drawable/layout_bg"
             android:orientation="vertical"
@@ -223,7 +223,7 @@
                 android:background="@drawable/layout_bg_question"
                 android:fontFamily="@font/pixel"
                 android:padding="6dp"
-                android:text="A bitcoin can be divided down into how many decimal places?"
+                android:text="@string/question3"
                 android:textAlignment="center"
                 android:textAllCaps="false"
                 android:textColor="#FFFFFF"
@@ -241,16 +241,16 @@
                     android:id="@+id/question_3_input"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_weight="0.8"
                     android:layout_gravity="center"
-                    android:hint="Number"
-                    android:textColorHint="#FFEB3B"
+                    android:layout_weight="0.8"
                     android:backgroundTint="#FFFFFF"
                     android:digits="0123456789"
                     android:fontFamily="@font/startrek"
+                    android:hint="Number"
                     android:inputType="number"
                     android:textAlignment="center"
                     android:textColor="#FFFFFF"
+                    android:textColorHint="#FFEB3B"
                     android:textSize="32sp" />
 
                 <ImageView
@@ -271,7 +271,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="4sp"
+            android:layout_margin="4dp"
             android:background="@drawable/layout_bg"
             android:orientation="vertical"
             android:padding="4dp"
@@ -284,7 +284,7 @@
                 android:fontFamily="@font/pixel"
                 android:gravity="center"
                 android:padding="6dp"
-                android:text="What is the best Bitcoin mining hardware?"
+                android:text="@string/question4"
                 android:textAllCaps="false"
                 android:textColor="#FFFFFF"
                 android:textSize="20sp"
@@ -308,9 +308,9 @@
                         android:layout_height="wrap_content"
                         android:buttonTint="#FFFFFF"
                         android:fontFamily="@font/pixel"
-                        android:paddingLeft="6sp"
+                        android:paddingLeft="6dp"
                         android:tag="0"
-                        android:text="CPU"
+                        android:text="@string/cpu"
                         android:textColor="#FFEB3B"
                         android:textSize="16sp" />
 
@@ -320,9 +320,9 @@
                         android:layout_height="wrap_content"
                         android:buttonTint="#FFFFFF"
                         android:fontFamily="@font/pixel"
-                        android:paddingLeft="6sp"
+                        android:paddingLeft="6dp"
                         android:tag="0"
-                        android:text="GPU"
+                        android:text="@string/gpu"
                         android:textColor="#FF9800"
                         android:textSize="16sp" />
 
@@ -332,9 +332,9 @@
                         android:layout_height="wrap_content"
                         android:buttonTint="#FFFFFF"
                         android:fontFamily="@font/pixel"
-                        android:paddingLeft="6sp"
+                        android:paddingLeft="6dp"
                         android:tag="0"
-                        android:text="FPGA"
+                        android:text="@string/fpga"
                         android:textColor="#03A9F4"
                         android:textSize="16sp" />
 
@@ -344,9 +344,9 @@
                         android:layout_height="wrap_content"
                         android:buttonTint="#FFFFFF"
                         android:fontFamily="@font/pixel"
-                        android:paddingLeft="6sp"
+                        android:paddingLeft="6dp"
                         android:tag="0"
-                        android:text="ASIC"
+                        android:text="@string/asic"
                         android:textColor="#FFFFFF"
                         android:textSize="16sp" />
                 </RadioGroup>
@@ -368,7 +368,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="4sp"
+            android:layout_margin="4dp"
             android:background="@drawable/layout_bg"
             android:orientation="vertical"
             android:padding="4dp"
@@ -380,7 +380,7 @@
                 android:background="@drawable/layout_bg_question"
                 android:fontFamily="@font/pixel"
                 android:padding="6dp"
-                android:text="What's my score?!"
+                android:text="@string/questionSubmit"
                 android:textAlignment="center"
                 android:textAllCaps="false"
                 android:textColor="#FFFFFF"
@@ -403,13 +403,13 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:hint="Name"
-                        android:textColorHint="#FFEB3B"
                         android:backgroundTint="#FFFFFF"
                         android:fontFamily="@font/startrek"
+                        android:hint="@string/name"
                         android:inputType="textPersonName"
                         android:textAlignment="center"
                         android:textColor="#FFFFFF"
+                        android:textColorHint="#FFEB3B"
                         android:textSize="32sp" />
 
                     <Button
@@ -418,11 +418,11 @@
                         android:layout_marginBottom="8dp"
                         android:background="@drawable/layout_bg"
                         android:fontFamily="@font/pixel"
-                        android:tag="A"
-                        android:text="Submit"
-                        android:textSize="20sp"
                         android:onClick="submitScore"
-                        android:textColor="#FFFFFF" />
+                        android:tag="A"
+                        android:text="@string/submitBtnText"
+                        android:textColor="#FFFFFF"
+                        android:textSize="20sp" />
 
                 </LinearLayout>
 

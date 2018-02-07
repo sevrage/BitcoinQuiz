@@ -1,3 +1,22 @@
 <resources>
     <string name="app_name">Bitcoin Quiz</string>
+    <string name="question1">Who is the mysterious creator of Bitcoin?</string>
+    <string name="question2">Select correct Bitcoin characteristics:</string>
+    <string name="question3">A bitcoin can be divided down into how many decimal places?</string>
+    <string name="question4">What is the best Bitcoin mining hardware?</string>
+    <string name="questionSubmit">What\'s my score?!</string>
+    <string name="submitBtnText">Submit</string>
+    <string name="question2Chk1">BTC’s supply is infinite</string>
+    <string name="question2Chk2">BTC can be banned.</string>
+    <string name="question2Chk3">BTC is untraceable.</string>
+    <string name="question2Chk4">BTC is decentralized.</string>
+    <string name="donald_trump">Donald Trump</string>
+    <string name="satoshi_nakamoto">Satoshi Nakamoto</string>
+    <string name="kim_dotcom">Kim Dotcom</string>
+    <string name="mickey_mouse">Mickey Mouse</string>
+    <string name="name">Name</string>
+    <string name="asic">ASIC</string>
+    <string name="fpga">FPGA</string>
+    <string name="gpu">GPU</string>
+    <string name="cpu">CPU</string>
 </resources>

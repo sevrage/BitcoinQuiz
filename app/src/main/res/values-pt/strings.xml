@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Bitcoin Quiz</string>
+    <string name="question1">Quem é o creador mítico da Bitcoin?</string>
+    <string name="questionSubmit">Qual é a minha pontuação?!</string>
+    <string name="submitBtnText">Enviar</string>
+    <string name="question2Chk1">BTC é geração infinita.</string>
+    <string name="question2Chk4">BTC é descentralizada.</string>
+    <string name="question2Chk3">BTC não é rastreável.</string>
+    <string name="question2Chk2">BTC não pode ser banida.</string>
+    <string name="question4">Qual é o melhor hardware de mineração da Bitcoin?</string>
+    <string name="question3">Uma bitcoin pode ser dividida em quantas casas decimais?</string>
+    <string name="question2">Selecione as características corretas de Bitcoin:</string>
+</resources>

@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
     //views
     RadioGroup question_1_rg;
     //RadioButton question_1_rb_1;
-    //RadioButton question_1_rb_2;
+    RadioButton question_1_rb_2;
     //RadioButton question_1_rb_3;
     //RadioButton question_1_rb_4;
 
@@ -46,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
     //RadioButton question_4_rb_1;
     //RadioButton question_4_rb_2;
     //RadioButton question_4_rb_3;
-    //RadioButton question_4_rb_4;
+    RadioButton question_4_rb_4;
 
 
     @Override
@@ -57,70 +57,47 @@ public class MainActivity extends AppCompatActivity {
         //disable keyboard popup on rotate
         this.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
 
-        question_1_rg = (RadioGroup) findViewById(R.id.question_1_rg);
-        //question_1_rb_1 = (RadioButton) findViewById(R.id.question_1_rb_1);
-        //question_1_rb_2 = (RadioButton) findViewById(R.id.question_1_rb_2);
-        //question_1_rb_3 = (RadioButton) findViewById(R.id.question_1_rb_3);
-        //question_1_rb_4 = (RadioButton) findViewById(R.id.question_1_rb_4);
 
-        question_2_chk_1 = (CheckBox) findViewById(R.id.question_2_chk_1);
-        question_2_chk_2 = (CheckBox) findViewById(R.id.question_2_chk_2);
-        question_2_chk_3 = (CheckBox) findViewById(R.id.question_2_chk_3);
-        question_2_chk_4 = (CheckBox) findViewById(R.id.question_2_chk_4);
+        question_1_rg = findViewById(R.id.question_1_rg);
+        //question_1_rb_1 = findViewById(R.id.question_1_rb_1);
+        question_1_rb_2 = findViewById(R.id.question_1_rb_2);
+        //question_1_rb_3 = findViewById(R.id.question_1_rb_3);
+        //question_1_rb_4 = findViewById(R.id.question_1_rb_4);
 
-        question_3_input = (EditText) findViewById(R.id.question_3_input);
+        question_2_chk_1 = findViewById(R.id.question_2_chk_1);
+        question_2_chk_2 = findViewById(R.id.question_2_chk_2);
+        question_2_chk_3 = findViewById(R.id.question_2_chk_3);
+        question_2_chk_4 = findViewById(R.id.question_2_chk_4);
 
-        question_4_rg = (RadioGroup) findViewById(R.id.question_4_rg);
-        //question_4_rb_1 = (RadioButton) findViewById(R.id.question_4_rb_1);
-        //question_4_rb_2 = (RadioButton) findViewById(R.id.question_4_rb_2);
-        //question_4_rb_3 = (RadioButton) findViewById(R.id.question_4_rb_3);
-        //question_4_rb_4 = (RadioButton) findViewById(R.id.question_4_rb_4);
+        question_3_input = findViewById(R.id.question_3_input);
 
+        question_4_rg = findViewById(R.id.question_4_rg);
+        //question_4_rb_1 = findViewById(R.id.question_4_rb_1);
+        //question_4_rb_2 = findViewById(R.id.question_4_rb_2);
+        //question_4_rb_3 = findViewById(R.id.question_4_rb_3);
+        question_4_rb_4 = findViewById(R.id.question_4_rb_4);
     }
-
-
-//  public void addListenerOnChkIos() {
-
-//      chkIos = (CheckBox) findViewById(R.id.chkIos);
-
-//      chkIos.setOnClickListener(new View.OnClickListener() {
-
-//          @Override
-//          public void onClick(View v) {
-//              //is chkIos checked?
-//              if (((CheckBox) v).isChecked()) {
-//                  Toast.makeText(MyAndroidAppActivity.this, "Bro, try Android :)", Toast.LENGTH_LONG).show();
-//              }
-
-//          }
-//      });
-//  }
-
 
     @Override
     public void onSaveInstanceState(Bundle savedInstanceState) {
         super.onSaveInstanceState(savedInstanceState);
 
+        //setup vars to be saved
+        setupAnswerVars();
+
         //Question 1
-        answer_1_selectedRbId = question_1_rg.getCheckedRadioButtonId();
         savedInstanceState.putInt("sv_question_1_selectedRbId", answer_1_selectedRbId);
 
         //Question 2
-        answer_2_chk_1 = question_2_chk_1.isChecked();
-        answer_2_chk_2 = question_2_chk_2.isChecked();
-        answer_2_chk_3 = question_2_chk_3.isChecked();
-        answer_2_chk_4 = question_2_chk_4.isChecked();
         savedInstanceState.putBoolean("sv_question_2_chk_1", answer_2_chk_1);
         savedInstanceState.putBoolean("sv_question_2_chk_2", answer_2_chk_2);
         savedInstanceState.putBoolean("sv_question_2_chk_3", answer_2_chk_3);
         savedInstanceState.putBoolean("sv_question_2_chk_4", answer_2_chk_4);
 
         //Question 3
-        answer_3_input = question_3_input.getText().toString();
         savedInstanceState.putString("sv_question_3_input", answer_3_input);
 
         //Question 4
-        answer_4_selectedRbId = question_4_rg.getCheckedRadioButtonId();
         savedInstanceState.putInt("sv_question_4_selectedRbId", answer_4_selectedRbId);
 
     }
@@ -166,17 +143,15 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    private void restoreSavedValues() {
-
-
-    }
-
     /**
      * This method is called when the submit button is clicked.
      */
     public void submitScore(View view) {
-        EditText nameImput = (EditText) findViewById(R.id.name_input_view);
-        String username = nameImput.getText().toString();
+        EditText nameInput = findViewById(R.id.name_input_view);
+        String username = nameInput.getText().toString();
+
+        //load vars
+        setupAnswerVars();
 
         double score = calculateScore();
         //Log.v("MainActivity","The score is " + score);
@@ -188,19 +163,42 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /**
+     * setup answer vars
+     */
+    private void setupAnswerVars() {
+        //Question 1
+        answer_1_selectedRbId = question_1_rg.getCheckedRadioButtonId();
+
+        //Question 2
+        answer_2_chk_1 = question_2_chk_1.isChecked();
+        answer_2_chk_2 = question_2_chk_2.isChecked();
+        answer_2_chk_3 = question_2_chk_3.isChecked();
+        answer_2_chk_4 = question_2_chk_4.isChecked();
+
+        //Question 3
+        answer_3_input = question_3_input.getText().toString();
+
+        //Question 4
+        answer_4_selectedRbId = question_4_rg.getCheckedRadioButtonId();
+    }
+
+    private int indexOfRadio(RadioGroup radioButtonGroup) {
+        int radioButtonID = radioButtonGroup.getCheckedRadioButtonId();
+        View radioButton = radioButtonGroup.findViewById(radioButtonID);
+        return radioButtonGroup.indexOfChild(radioButton);
+    }
+
+    /**
      * Calculates the score in percentage
      */
     private double calculateScore() {
 
         double score = 0;
 
-
-        if (answer_1_selectedRbId == 2) {
+        if (answer_1_selectedRbId == question_1_rb_2.getId()) {
             score += 1;
-            Log.v("MainActivity","Question 1 is correct ");
+            Log.v("MainActivity", "Question 1 is correct ");
         }
-
-
 
         double scoreQuestion2 = 0;
         if (answer_2_chk_1) {
@@ -225,21 +223,21 @@ public class MainActivity extends AppCompatActivity {
         }
         if (scoreQuestion2 > 0) {
             scoreQuestion2 = scoreQuestion2 / 4;
-            Log.v("MainActivity","Question 2 score is: " + scoreQuestion2);
+            Log.v("MainActivity", "Question 2 score is: " + scoreQuestion2);
         }
 
-        if (answer_3_input == "8") {
+        if (answer_3_input.equals("8")) {
             score += 1;
-            Log.v("MainActivity","Question 3 is correct ");
+            Log.v("MainActivity", "Question 3 is correct ");
         }
 
-        if (answer_4_selectedRbId == 4) {
+        if (answer_4_selectedRbId == question_4_rb_4.getId()) {
             score += 1;
-            Log.v("MainActivity","Question 4 is correct ");
+            Log.v("MainActivity", "Question 4 is correct ");
         }
 
         score = (score + scoreQuestion2) * 100.0 / 4;
-        Log.v("MainActivity","Total Score is: " + score);
+        Log.v("MainActivity", "Total Score is: " + score);
         return score;
 
     }
@@ -268,13 +266,6 @@ public class MainActivity extends AppCompatActivity {
             startActivity(intent);
         }
     }
-
-
-    /**
-     * Load vars and views
-     */
-
-
 
     /**
      * Reset Quiz - vars and views
